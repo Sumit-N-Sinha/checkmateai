@@ -1,0 +1,50 @@
+package com.example.demo.securityConfig;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+	
+	@Autowired
+	private JwtHelper jwtAuthFilter;
+
+	@Bean
+	public org.springframework.security.authentication.AuthenticationManager authenticationManager(org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration authenticationConfiguration) throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
+	}
+
+	@Bean
+	public PasswordEncoder encodePassword() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	    http
+	        // 1. Disable CSRF (Crucial for testing POST/PUT requests via Swagger)
+	        .csrf(csrf -> csrf.disable()) 
+	        
+	        .authorizeHttpRequests(auth -> auth
+	            // 2. Allow Swagger UI & Docs
+	            .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+	            .requestMatchers("localhost:4200", "/api/**").permitAll()
+	            
+	            // 3. Allow your actual Controller endpoints
+	            .requestMatchers("/api/v1/**").permitAll()
+	            
+	            // 4. Everything else requires a login
+	            .anyRequest().authenticated()
+	        ).sessionManagement(session -> session
+	        		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+	        		).addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+	    
+
+	    return http.build();
+	}
+}
