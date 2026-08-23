@@ -1,0 +1,42 @@
+.home-page {
+	background: linear-gradient(135deg, #f3f7f4 0%, #e4f0ed 100%);
+	min-height: 100vh;
+	padding: 72px 24px;
+}
+
+.home-content {
+	margin: 0 auto;
+	max-width: 760px;
+}
+
+.eyebrow {
+	color: #00796b;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin: 0 0 16px;
+}
+
+h1 {
+	color: #17322d;
+	font-size: clamp(36px, 6vw, 64px);
+	line-height: 1.05;
+	margin: 0;
+	max-width: 620px;
+}
+
+.intro {
+	color: #52615d;
+	font-size: 18px;
+	line-height: 1.6;
+	margin: 24px 0 40px;
+	max-width: 520px;
+}
+
+.welcome-card {
+	max-width: 520px;
+}
+
+.welcome-card mat-card-actions {
+	padding: 16px;
+}

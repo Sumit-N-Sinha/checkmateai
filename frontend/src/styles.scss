@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$checkmate-primary: mat.define-palette(mat.$teal-palette, 700);
+$checkmate-accent: mat.define-palette(mat.$amber-palette, A700);
+$checkmate-theme: mat.define-light-theme((
+	color: (
+		primary: $checkmate-primary,
+		accent: $checkmate-accent
+	),
+	typography: mat.define-typography-config(
+		$font-family: 'Inter, sans-serif'
+	)
+));
+
+@include mat.all-component-themes($checkmate-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Inter, sans-serif; }
