@@ -1,6 +1,6 @@
 .home-page {
 	background: linear-gradient(135deg, #f3f7f4 0%, #e4f0ed 100%);
-	min-height: 100vh;
+	min-height: calc(100vh - 72px);
 	padding: 72px 24px;
 }
 
