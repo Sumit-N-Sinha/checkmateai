@@ -1,4 +1,10 @@
 <header class="app-header">
-  <div class="brand">CHECKMATE</div>
-  <button mat-stroked-button color="primary" (click)="logout()">Logout</button>
+  <a class="brand" routerLink="/">
+    <span class="brand-mark">&#9819;</span>
+    <span>Checkmate AI</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <a routerLink="/login">Log in</a>
+    <a class="nav-cta" routerLink="/register">Get Started</a>
+  </nav>
 </header>

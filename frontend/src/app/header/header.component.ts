@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-logout() {
-throw new Error('Method not implemented.');
-}
+
+  constructor(private loginService: LoginService) { }
+
+  buttonText: string = 'Login/SignUp';
+  jwtToken: string| null = this.loginService.getToken();
+
+  ngOnInit() {
+    if (this.jwtToken != null) {
+      this.buttonText = 'Logout';
+    }
+  }
+  logout() {
+    throw new Error('Method not implemented.');
+  }
 
 }

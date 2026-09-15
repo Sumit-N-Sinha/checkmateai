@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   private apiUrl = environment.apiUrl;
-  private readonly tokenKey = 'checkmate_jwt';
+  private readonly tokenKey = '';
 
   login(email: string, password: string): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/v1/login`, { email, password }).pipe(

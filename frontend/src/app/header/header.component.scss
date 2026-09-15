@@ -2,15 +2,59 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
-  border-bottom: 1px solid #dfe9e6;
-  padding: 18px 32px;
-  box-shadow: 0 2px 8px rgba(23, 50, 45, 0.04);
+  background: #f7f2e9;
+  padding: 24px clamp(24px, 6vw, 96px);
+  position: relative;
+  z-index: 2;
 }
 
 .brand {
-  color: #17322d;
-  font-size: 18px;
+  align-items: center;
+  color: #17233d;
+  display: flex;
+  font-size: 17px;
   font-weight: 800;
-  letter-spacing: 2px;
+  gap: 10px;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  color: #ee7f4b;
+  font-size: 27px;
+  line-height: 1;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #17233d;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-cta {
+  background: #ee7f4b;
+  border-radius: 6px;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+@media (max-width: 520px) {
+  .app-header {
+    padding: 20px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .nav-cta {
+    padding: 10px 13px;
+  }
 }
