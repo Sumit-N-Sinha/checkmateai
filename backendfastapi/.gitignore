@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets (CRITICAL for FastAPI)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Database files (e.g., local SQLite, migrations cache)
+*.sqlite3
+*.db
+*.db-journal
+
+# Testing & Coverage (pytest, coverage)
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Linting & Formatting tools (ruff, mypy, black)
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Static files / Uploads (adjust to match your local upload directory)
+/uploads/
+/static/cache/
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor settings
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build & packaging (if distributing packages or wheels)
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Log files
+*.log
+logs/
