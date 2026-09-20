@@ -2,27 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f7f2e9;
-  padding: 24px clamp(24px, 6vw, 96px);
+  background: #171716;
+  border-bottom: 1px solid #2a2926;
+  padding: 20px clamp(24px, 6vw, 96px);
   position: relative;
   z-index: 2;
 }
 
 .brand {
   align-items: center;
-  color: #17233d;
+  color: #f7f2e9;
   display: flex;
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 700;
   gap: 10px;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
   text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .brand-mark {
-  color: #ee7f4b;
-  font-size: 27px;
+  align-items: center;
+  background: #c9a84c;
+  border-radius: 8px;
+  color: #c9a84c;
+  display: flex;
+  font-size: 22px;
+  height: 40px;
+  justify-content: center;
   line-height: 1;
+  width: 40px;
 }
 
 nav {
@@ -32,16 +41,17 @@ nav {
 }
 
 nav a {
-  color: #17233d;
+  color: #bdb6aa;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .nav-cta {
-  background: #ee7f4b;
+  background: #c9a84c;
   border-radius: 6px;
-  color: #fff;
+  color: #171716;
   padding: 12px 20px;
 }
 
