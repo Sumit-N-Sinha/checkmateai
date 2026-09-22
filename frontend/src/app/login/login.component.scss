@@ -1,17 +1,22 @@
 .auth-page {
     align-items: center;
-    background: conic-gradient(#1a1a1a 90deg, #ffffff 90deg 180deg, #1a1a1a 180deg 270deg, #ffffff 270deg);
-    background-size: 120px 120px;
+    background: #222018;
+    border: 1px solid #38352e;
+    // background: conic-gradient(#1a1a1a 90deg, #ffffff 90deg 180deg, #1a1a1a 180deg 270deg, #ffffff 270deg);
+    // background-size: 120px 120px;
     // background: linear-gradient(135deg, #f3f7f4 0%, #e4f0ed 100%);
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    // min-height: 100vh;
     padding: 32px 20px;
 }
 
 .auth-card {
     max-width: 440px;
     width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .auth-form {
@@ -24,6 +29,8 @@
 .auth-form button {
     height: 48px;
     margin-top: 8px;
+    background: linear-gradient(135deg, rgb(201, 168, 76) 0%, rgb(184, 148, 30) 100%);
+    color: rgb(24, 23, 21);
 }
 
 mat-card-actions {

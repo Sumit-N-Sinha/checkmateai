@@ -4,7 +4,7 @@
     <span>Checkmate AI</span>
   </a>
   <nav aria-label="Primary navigation">
-    <a routerLink="/login">Log in</a>
-    <a class="nav-cta" routerLink="/register">Get Started</a>
+    <button type="button" class="nav-link" (click)="openLoginDialog()">Log in</button>
+    <button type="button" class="nav-cta" (click)="openRegisterDialog()">Get Started</button>
   </nav>
 </header>

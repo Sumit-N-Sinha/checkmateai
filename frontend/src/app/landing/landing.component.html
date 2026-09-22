@@ -5,15 +5,15 @@
 			<h1>Play smarter.<br><em>Understand deeper.</em></h1>
 			<p class="intro">The chess platform that learns from every game you play. Personalized AI coaching, tactical training, and deep game analysis, all tailored to your unique playing style.</p>
 			<div class="hero-actions">
-				<a class="primary-action" routerLink="/register">Start Playing Free <span>&rarr;</span></a>
-				<a class="secondary-action" routerLink="/login">Continue as Guest</a>
+				<button type="button" class="primary-action" (click)="openRegisterDialog()">Start Playing Free <span>&rarr;</span></button>
+				<button type="button" class="secondary-action" (click)="openLoginDialog()">Continue as Guest</button>
 			</div>
 			<p class="fine-print">No credit card required. Free forever for basic play.</p>
 		</div>
 
 		<div class="board-art" aria-hidden="true">
-			<div class="orbit orbit-one"></div>
-			<div class="orbit orbit-two"></div>
+			<!-- <div class="orbit orbit-one"></div> -->
+			<!-- <div class="orbit orbit-two"></div> -->
 			<span class="piece piece-king">&#9818;</span>
 			<span class="piece piece-queen">&#9813;</span>
 			<span class="piece piece-knight">&#9822;</span>

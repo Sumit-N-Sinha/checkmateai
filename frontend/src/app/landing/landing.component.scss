@@ -1,8 +1,10 @@
 .landing-page {
 	background-color: #171716;
-	background-image:
-		linear-gradient(90deg, rgba(255, 255, 255, .025) 50%, transparent 50%),
-		linear-gradient(rgba(255, 255, 255, .025) 50%, transparent 50%);
+	background: conic-gradient(#1d1b16 90deg, #181715 90deg 180deg, #1d1b16 180deg 270deg, #181715 270deg);
+    // background-size: 120px 120px;
+	// background-image:
+	// 	linear-gradient(90deg, rgba(255, 255, 255, .025) 50%, transparent 50%),
+	// 	linear-gradient(rgba(255, 255, 255, .025) 50%, transparent 50%);
 	background-position: 0 0;
 	background-size: 90px 90px;
 	color: #f0ead8;
@@ -109,7 +111,6 @@ h1 em {
 
 .secondary-action {
 	border: 1px solid #d8d1c6;
-	color: #f0ead8;
 }
 
 .fine-print {
@@ -158,21 +159,20 @@ h1 em {
 }
 
 .piece-king {
-	font-size: 180px;
+	font-size: 220px;
 	left: 7%;
 	top: 27%;
 }
 
 .piece-queen {
-	color: rgba(23, 35, 61, .14);
-	font-size: 80px;
+	font-size: 150px;
 	right: 10%;
 	top: 31%;
 }
 
 .piece-knight {
 	bottom: 26%;
-	font-size: 70px;
+	font-size: 120px;
 	right: 8%;
 }
 

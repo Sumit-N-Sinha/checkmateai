@@ -16,5 +16,10 @@ $checkmate-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($checkmate-theme);
 
+:root{
+	--mdc-outlined-text-field-label-text-color: #8a8070;
+	--mdc-outlined-text-field-outline-color: #c9a84c;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Inter, sans-serif; }
