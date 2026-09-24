@@ -4,22 +4,242 @@
 
 $checkmate-primary: mat.define-palette(mat.$teal-palette, 700);
 $checkmate-accent: mat.define-palette(mat.$amber-palette, A700);
-$checkmate-theme: mat.define-light-theme((
-	color: (
-		primary: $checkmate-primary,
-		accent: $checkmate-accent
-	),
-	typography: mat.define-typography-config(
-		$font-family: 'Inter, sans-serif'
-	)
-));
+$checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
+				accent: $checkmate-accent),
+			typography: mat.define-typography-config($font-family: 'Inter, sans-serif'
+			)));
 
 @include mat.all-component-themes($checkmate-theme);
 
-:root{
-	--mdc-outlined-text-field-label-text-color: #8a8070;
-	--mdc-outlined-text-field-outline-color: #c9a84c;
+.mat-mdc-dialog-container .mdc-dialog__surface {
+	--mdc-dialog-container-color: transparent;
+	background-color: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	outline: none !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Inter, sans-serif; }
+.cdk-overlay-pane.auth-dialog {
+	max-width: calc(100vw - 32px) !important;
+	width: min(508px, calc(100vw - 32px)) !important;
+}
+
+.auth-dialog .mat-mdc-dialog-container {
+	max-height: calc(100vh - 32px);
+	padding: 0 !important;
+}
+
+.cdk-overlay-backdrop {
+	backdrop-filter: blur(7px);
+	background: rgba(0, 0, 0, 0.76) !important;
+}
+
+.auth-dialog .auth-page {
+	align-items: stretch;
+	background: transparent !important;
+	border: 0 !important;
+	min-height: 0;
+	padding: 0 !important;
+}
+
+.auth-dialog .auth-card {
+	background: #211f1a !important;
+	border: 1px solid rgba(214, 190, 122, 0.2) !important;
+	border-radius: 16px !important;
+	box-shadow: 0 24px 65px rgba(0, 0, 0, 0.58) !important;
+	box-sizing: border-box;
+	max-width: none;
+	width: 100%;
+}
+
+.auth-dialog mat-card-header {
+	align-items: center;
+	justify-content: flex-start;
+	padding: 30px 36px 0 !important;
+	text-align: left;
+}
+
+.auth-dialog mat-card-title {
+	align-items: center;
+	color: #f4e7c6 !important;
+	display: flex;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 26px !important;
+	font-weight: 700 !important;
+	gap: 12px;
+	letter-spacing: -0.4px !important;
+	line-height: 1.15;
+}
+
+.auth-dialog .auth-mark {
+	align-items: center;
+	background: linear-gradient(135deg, #d3b54f, #b88f18);
+	border-radius: 9px;
+	box-shadow: 0 5px 12px rgba(201, 168, 76, 0.18);
+	color: #fff7da;
+	display: inline-flex;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 20px;
+	height: 36px;
+	justify-content: center;
+	line-height: 1;
+	width: 36px;
+}
+
+.auth-dialog mat-card-subtitle {
+	color: #cbbb91 !important;
+	font-family: Inter, sans-serif;
+	font-size: 14px !important;
+	line-height: 1.4;
+	opacity: 1 !important;
+}
+
+.auth-dialog mat-card-content {
+	padding: 0 36px !important;
+}
+
+.auth-dialog .social-login {
+	gap: 12px;
+	margin: 26px 0 18px;
+}
+
+.auth-dialog .social-btn {
+	background: #2a2823;
+	border: 1px solid rgba(214, 190, 122, 0.1);
+	border-radius: 10px;
+	color: #f1e7d1;
+	font-size: 15px;
+	font-weight: 600;
+	min-height: 48px;
+	transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.auth-dialog .social-btn:hover {
+	background: #312e27;
+	border-color: rgba(214, 190, 122, 0.28);
+	transform: translateY(-1px);
+}
+
+.auth-dialog .divider {
+	color: #9f9275;
+	font-size: 13px;
+	margin: 18px 0 22px;
+}
+
+.auth-dialog .divider::before,
+.auth-dialog .divider::after {
+	border-top-color: rgba(214, 190, 122, 0.22);
+}
+
+.auth-dialog .auth-form {
+	gap: 8px;
+	padding-top: 0;
+}
+
+.auth-dialog .auth-form mat-form-field {
+	--mdc-outlined-text-field-container-color: #2a2823;
+	--mdc-outlined-text-field-label-text-color: #b6a77f;
+	--mdc-outlined-text-field-input-text-color: #f3ead6;
+	--mdc-outlined-text-field-placeholder-color: #9f9275;
+	--mdc-outlined-text-field-outline-color: rgba(214, 190, 122, 0.18);
+	--mdc-outlined-text-field-hover-outline-color: rgba(201, 168, 76, 0.55);
+	--mdc-outlined-text-field-focused-outline-color: #c9a84c;
+	--mdc-outlined-text-field-hover-label-text-color: #b6a77f;
+	--mdc-outlined-text-field-focused-label-text-color: #d7c48d;
+}
+
+.auth-dialog .mat-mdc-input-element,
+.auth-dialog .mat-mdc-form-field-label,
+.auth-dialog input::placeholder {
+	color: #f3ead6 !important;
+}
+
+.auth-dialog input::placeholder {
+	color: #9f9275 !important;
+}
+
+.auth-dialog .auth-form button {
+	background: linear-gradient(135deg, #d2b14d 0%, #c9a01e 100%);
+	border-radius: 9px;
+	box-shadow: 0 8px 18px rgba(201, 168, 76, 0.15);
+	color: #1c1a17;
+	font-size: 15px;
+	font-weight: 700;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.auth-dialog mat-card-actions {
+	gap: 4px;
+	padding: 18px 36px 30px !important;
+}
+
+.auth-dialog mat-card-actions span {
+	color: #9f9275;
+	font-size: 14px;
+}
+
+.auth-dialog mat-card-actions button {
+	color: #d3ad35 !important;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+@media (max-width: 560px) {
+	.auth-dialog mat-card-header,
+	.auth-dialog mat-card-content {
+		padding-left: 22px !important;
+		padding-right: 22px !important;
+	}
+
+	.auth-dialog mat-card-actions {
+		padding-left: 22px !important;
+		padding-right: 22px !important;
+	}
+}
+
+:root {
+	--mdc-outlined-text-field-label-text-color: #d7c48d;
+	--mdc-outlined-text-field-outline-color: rgba(214, 190, 122, 0.18);
+	--mdc-outlined-text-field-hover-outline-color: #c9a84c;
+	--mdc-outlined-text-field-focus-outline-color: #c9a84c;
+	--mdc-outlined-text-field-focused-outline-color: #c9a84c;
+	--mdc-outlined-text-field-hover-label-text-color: #d7c48d;
+	--mdc-outlined-text-field-focus-label-text-color: #d7c48d;
+	--mdc-outlined-text-field-focused-label-text-color: #d7c48d;
+	--mat-mdc-button-persistent-ripple-color: #c9a84c;
+	--mdc-text-button-label-text-color: #c9a84c;
+	--mdc-text-field--focused: #c9a84c;
+}
+
+.mdc-text-field:hover .mdc-floating-label,
+.mdc-text-field:hover .mdc-floating-label--float-above,
+.mdc-text-field--focused .mdc-floating-label,
+.mdc-text-field--focused .mdc-floating-label--float-above {
+	color: #d7c48d !important;
+}
+
+.mdc-text-field--focused .mdc-notched-outline__leading,
+.mdc-text-field--focused .mdc-notched-outline__notch,
+.mdc-text-field--focused .mdc-notched-outline__trailing {
+	border-color: #c9a84c !important;
+}
+
+.mat-mdc-button.mat-primary {
+	--mdc-text-button-label-text-color: #c9a84c;
+}
+
+.mat-mdc-unelevated-button.mat-primary {
+	--mdc-filled-button-container-color: #c9a84c;
+	--mdc-filled-button-label-text-color: #fff;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Inter, sans-serif;
+}
