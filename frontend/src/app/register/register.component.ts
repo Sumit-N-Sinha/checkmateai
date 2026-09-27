@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +12,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class RegisterComponent {
   constructor(private router: Router,
+    private authService: AuthService,
     private snackBar: MatSnackBar,
     private dialog: MatDialog,
     @Optional() private dialogRef?: MatDialogRef<RegisterComponent>
@@ -42,11 +44,12 @@ export class RegisterComponent {
       });
       return;
     }
-    this.snackBar.open('Registration successful', 'Close', {
-      duration: 3000,
-    });
-
-    if (this.dialogRef) {
+    this.authService.register(this.username,this.email,this.password).subscribe({
+      next: () => {
+        this.snackBar.open('Registration successful', 'Close', {
+          duration: 3000,
+        });
+        if (this.dialogRef) {
       this.dialogRef.close();
       this.dialog.open(LoginComponent, {
         width: '420px',
@@ -56,8 +59,27 @@ export class RegisterComponent {
       });
       return;
     }
+        this.router.navigate(['/login']);
+      },
+      error: () => {
+        this.snackBar.open('Registration failed', 'Close', {
+          duration: 3000,
+        });
+      }
+    });
 
-    this.router.navigate(['/login']);
+    // if (this.dialogRef) {
+    //   this.dialogRef.close();
+    //   this.dialog.open(LoginComponent, {
+    //     width: '420px',
+    //     maxWidth: '90vw',
+    //     panelClass: 'auth-dialog',
+    //     autoFocus: true
+    //   });
+    //   return;
+    // }
+
+    // this.router.navigate(['/login']);
   }
 
 }

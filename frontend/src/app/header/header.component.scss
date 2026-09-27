@@ -18,14 +18,14 @@
   gap: 10px;
   letter-spacing: -0.4px;
   text-decoration: none;
-  font-family: 'Playfair Display', Georgia, serif;
+  // font-family: 'Playfair Display', Georgia, serif;
 }
 
 .brand-mark {
   align-items: center;
   background: #c9a84c;
   border-radius: 8px;
-  color: #c9a84c;
+  color: #fff;
   display: flex;
   font-size: 22px;
   height: 40px;
@@ -46,7 +46,7 @@ nav a,
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  font-family: 'Playfair Display', Georgia, serif;
+  // font-family: 'Playfair Display', Georgia, serif;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -59,7 +59,7 @@ nav a,
   border-radius: 6px;
   color: #171716;
   cursor: pointer;
-  font-family: 'Playfair Display', Georgia, serif;
+  // font-family: 'Playfair Display', Georgia, serif;
   font-size: 14px;
   font-weight: 700;
   padding: 12px 20px;

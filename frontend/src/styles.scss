@@ -6,10 +6,26 @@ $checkmate-primary: mat.define-palette(mat.$teal-palette, 700);
 $checkmate-accent: mat.define-palette(mat.$amber-palette, A700);
 $checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
 				accent: $checkmate-accent),
-			typography: mat.define-typography-config($font-family: 'Inter, sans-serif'
+			typography: mat.define-typography-config($font-family: 'Playfair Display, Georgia, serif'
 			)));
 
 @include mat.all-component-themes($checkmate-theme);
+
+:root {
+	--app-font: 'Playfair Display', Georgia, serif;
+}
+
+html,
+body,
+body * {
+	font-family: var(--app-font) !important;
+}
+
+.material-icons,
+.material-icons-outlined,
+.material-symbols-outlined {
+	font-family: 'Material Icons' !important;
+}
 
 .mat-mdc-dialog-container .mdc-dialog__surface {
 	--mdc-dialog-container-color: transparent;
@@ -63,7 +79,7 @@ $checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
 	align-items: center;
 	color: #f4e7c6 !important;
 	display: flex;
-	font-family: Georgia, 'Times New Roman', serif;
+	// font-family: Georgia, 'Times New Roman', serif;
 	font-size: 26px !important;
 	font-weight: 700 !important;
 	gap: 12px;
@@ -78,7 +94,7 @@ $checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
 	box-shadow: 0 5px 12px rgba(201, 168, 76, 0.18);
 	color: #fff7da;
 	display: inline-flex;
-	font-family: Georgia, 'Times New Roman', serif;
+	// font-family: Georgia, 'Times New Roman', serif;
 	font-size: 20px;
 	height: 36px;
 	justify-content: center;
@@ -88,7 +104,7 @@ $checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
 
 .auth-dialog mat-card-subtitle {
 	color: #cbbb91 !important;
-	font-family: Inter, sans-serif;
+	// font-family: Inter, sans-serif;
 	font-size: 14px !important;
 	line-height: 1.4;
 	opacity: 1 !important;
@@ -198,6 +214,7 @@ $checkmate-theme: mat.define-light-theme((color: (primary: $checkmate-primary,
 	}
 }
 
+
 :root {
 	--mdc-outlined-text-field-label-text-color: #d7c48d;
 	--mdc-outlined-text-field-outline-color: rgba(214, 190, 122, 0.18);
@@ -241,5 +258,5 @@ body {
 
 body {
 	margin: 0;
-	font-family: Inter, sans-serif;
+	font-family: var(--app-font) !important;
 }
