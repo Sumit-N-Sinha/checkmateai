@@ -14,7 +14,7 @@ from ..security.jwt import (
 from ..services.auth_service import authenticate_user, register_user
 
 router = APIRouter(
-    prefix="/auth",
+    prefix="/v1",
     tags=["Authentication"]
 )
 
